@@ -85,9 +85,9 @@ html{scroll-behavior:smooth}
 .dtr th, .dtr td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--dtr-line)}
 .dtr th{font-family:var(--dtr-f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--dtr-muted);font-weight:500;background:var(--dtr-surface-2);position:relative;white-space:nowrap}
 .dtr th.sortable{cursor:pointer;user-select:none}
-.dtr th.sortable::after{content:" \u2195";opacity:.45}
-.dtr th[aria-sort="ascending"]::after{content:" \u2191";opacity:1}
-.dtr th[aria-sort="descending"]::after{content:" \u2193";opacity:1}
+.dtr th.sortable::after{content:" ↕";opacity:.45}
+.dtr th[aria-sort="ascending"]::after{content:" ↑";opacity:1}
+.dtr th[aria-sort="descending"]::after{content:" ↓";opacity:1}
 .dtr tr:last-child td{border-bottom:0}
 .dtr td.n, .dtr th.n{text-align:right;font-variant-numeric:tabular-nums}
 .dtr tr.hl td{background:var(--dtr-accent-soft)}
