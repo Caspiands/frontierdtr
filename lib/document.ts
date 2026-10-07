@@ -45,7 +45,7 @@ export function cellVal(text: string): number | string {
   const match = text
     .trim()
     .replace(/,/g, "")
-    .match(/^[\u2265\u2264<>~\u2248+\s]*(-?\d+(\.\d+)?)/);
+    .match(/^[≥≤<>~≈+\s]*(-?\d+(\.\d+)?)/);
   return match ? parseFloat(match[1]) : text.trim().toLowerCase();
 }
 
