@@ -83,7 +83,7 @@ export function GanttChart() {
     <>
       <div className="g-row g-head">
         <div className="g-lab">
-          <Editable id="gantt-head" fallback="Workstream \u00b7 task" />
+          <Editable id="gantt-head" fallback="Workstream · task" />
         </div>
         <div className="g-track">
           {Array.from({ length: 13 }, (_, quarter) => {
@@ -91,7 +91,7 @@ export function GanttChart() {
             const end = start + 3;
             return (
               <span key={quarter}>
-                <Editable id={`gantt-q${quarter}`} fallback={`W${start}\u2013${end}`} />
+                <Editable id={`gantt-q${quarter}`} fallback={`W${start}–${end}`} />
               </span>
             );
           })}
@@ -104,7 +104,7 @@ export function GanttChart() {
               <Editable id={`g${index}-ws`} fallback={stream.ws} />
               <small>
                 <Editable id={`g${index}-owner`} fallback={stream.owner} />
-                {" \u00b7 "}
+                {" · "}
                 <Editable id={`g${index}-scope`} fallback={stream.scope} />
               </small>
             </div>
@@ -114,14 +114,14 @@ export function GanttChart() {
                   key={gate.label}
                   className="g-gate"
                   style={{ left: `${((gate.week - 0.5) / SPAN) * 100}%` }}
-                  title={`Week ${gate.week} \u00b7 ${textOf(texts, `g${index}-gate-${gateIndex}`, gate.label)}`}
+                  title={`Week ${gate.week} · ${textOf(texts, `g${index}-gate-${gateIndex}`, gate.label)}`}
                 />
               ))}
             </div>
           </div>
           {stream.items.map((item, itemIndex) => {
             const label = textOf(texts, `g${index}-task-${itemIndex}`, item.name);
-            const when = item.start === item.end ? `Week ${item.start}` : `Weeks ${item.start}\u2013${item.end}`;
+            const when = item.start === item.end ? `Week ${item.start}` : `Weeks ${item.start}–${item.end}`;
             return (
               <div className="g-row" key={`${index}-${itemIndex}`}>
                 <div className="g-lab" title={label}>
@@ -134,7 +134,7 @@ export function GanttChart() {
                       left: `${((item.start - 1) / SPAN) * 100}%`,
                       width: `${((item.end - item.start + 1) / SPAN) * 100}%`,
                     }}
-                    title={`${label} \u00b7 ${when}`}
+                    title={`${label} · ${when}`}
                   />
                 </div>
               </div>
@@ -149,7 +149,7 @@ export function GanttChart() {
             {schedule.gantt.flatMap((stream, index) =>
               stream.gates.map((gate, gateIndex) => (
                 <span key={`${stream.ws}-${gate.label}`}>
-                  Week {gate.week} \u00b7 <Editable id={`g${index}-gate-${gateIndex}`} fallback={gate.label} />
+                  Week {gate.week} · <Editable id={`g${index}-gate-${gateIndex}`} fallback={gate.label} />
                 </span>
               )),
             )}
