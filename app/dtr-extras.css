@@ -1,0 +1,319 @@
+/* Presentation polish layered on the source stylesheet. */
+
+.dtr {
+  min-height: 100vh;
+}
+
+.dtr ul {
+  list-style: disc;
+}
+
+.dtr .card ul,
+.dtr .prose ul,
+.dtr .card ol,
+.dtr details.wk .body ul {
+  display: block;
+}
+
+.dtr .card li + li,
+.dtr .prose li + li,
+.dtr details.wk .body li + li {
+  margin-top: 4px;
+}
+
+.dtr ol {
+  list-style: decimal;
+}
+
+.dtr .tree ul,
+.dtr details.wk summary {
+  list-style: none;
+}
+
+.dtr a.logo {
+  text-decoration: none;
+}
+
+.dtr .session-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+}
+
+.dtr .role-pill {
+  font-family: var(--dtr-f-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: var(--dtr-mast-ink);
+  border-radius: 99px;
+  padding: 5px 8px;
+  white-space: nowrap;
+}
+
+.dtr[data-role="editor"] .role-pill {
+  background: var(--dtr-accent);
+  border-color: transparent;
+  color: #fff;
+}
+
+.dtr .save-status {
+  font-size: 12px;
+  color: var(--dtr-mast-muted);
+  white-space: nowrap;
+}
+
+.dtr .save-status[data-state="saved"] {
+  color: #b7f0ea;
+}
+
+.dtr .save-status[data-state="error"] {
+  color: #ffb4c0;
+}
+
+.dtr .logout-error {
+  color: #ffb4c0;
+  font-size: 12px;
+}
+
+.dtr .save-banner {
+  background: var(--dtr-accent-soft);
+  color: var(--dtr-ink);
+  border-bottom: 1px solid var(--dtr-line);
+}
+
+.dtr .save-banner-in {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px var(--dtr-gut);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+.dtr .filter-field {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: min(100%, 240px);
+}
+
+.dtr .filter-ph {
+  font-family: var(--dtr-f-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--dtr-muted);
+}
+
+.dtr .editor-gates {
+  border: 1px dashed var(--dtr-line);
+  border-radius: var(--dtr-r);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--dtr-surface);
+}
+
+.dtr .editor-gates > p,
+.dtr .all-edit {
+  font-family: var(--dtr-f-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dtr-muted);
+}
+
+.dtr .all-edit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: var(--dtr-f-body);
+  font-size: 13px;
+}
+
+.dtr .gate-edit {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-size: 13px;
+}
+
+.dtr[data-role="editor"] [data-edit] {
+  border-radius: 3px;
+  outline: 1px dashed transparent;
+  outline-offset: 2px;
+  cursor: text;
+  white-space: pre-wrap;
+}
+
+.dtr[data-role="editor"] [data-edit]:hover,
+.dtr[data-role="editor"] [data-edit]:focus {
+  outline-color: var(--dtr-accent);
+  background: color-mix(in srgb, var(--dtr-accent) 12%, transparent);
+}
+
+.dtr .loading-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.dtr .loading-bar {
+  height: 14px;
+  border-radius: 7px;
+  background: var(--dtr-surface-2);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .dtr .card,
+  .dtr .tile,
+  .dtr .persona,
+  .dtr .phase,
+  .dtr .ro,
+  .dtr .flow .step,
+  .dtr .btn,
+  .dtr .tab,
+  .dtr .theme-btn,
+  .dtr figure img,
+  .dtr .g-bar,
+  .dtr .tile .v,
+  .dtr[data-role="editor"] [data-edit] {
+    transition:
+      transform 0.22s ease,
+      box-shadow 0.22s ease,
+      border-color 0.22s ease,
+      filter 0.22s ease,
+      background-color 0.18s ease,
+      color 0.18s ease,
+      letter-spacing 0.22s ease,
+      outline-color 0.18s ease;
+  }
+
+  .dtr .card:hover,
+  .dtr .tile:hover,
+  .dtr .persona:hover,
+  .dtr .phase:hover,
+  .dtr .ro:hover,
+  .dtr .flow .step:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(19, 41, 75, 0.08);
+  }
+
+  .dtr .btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.06);
+  }
+
+  .dtr .theme-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .dtr figure {
+    overflow: hidden;
+    border-radius: var(--dtr-r);
+  }
+
+  .dtr figure img {
+    transform-origin: center;
+  }
+
+  .dtr figure:hover img {
+    transform: scale(1.015);
+  }
+
+  .dtr .tile:hover .v {
+    letter-spacing: -0.02em;
+  }
+
+  .dtr .g-bar:hover {
+    filter: brightness(1.12);
+    transform: scaleY(1.12);
+  }
+
+  .dtr .loading-bar {
+    animation: dtr-pulse 1.2s ease-in-out infinite;
+  }
+}
+
+@keyframes dtr-pulse {
+  50% {
+    opacity: 0.45;
+  }
+}
+
+/* Tabs sit on their own row so every section name is fully visible.
+   The old single-row mast scrolled them under a hidden scrollbar, which
+   left Roadmap looking like a lone R. */
+@media (min-width: 761px) {
+  .dtr .mast-in {
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 16px;
+    row-gap: 0;
+    padding-bottom: 6px;
+  }
+
+  .dtr .tabs {
+    order: 4;
+    flex: 1 0 100%;
+    width: 100%;
+    min-width: 100%;
+    overflow: visible;
+    flex-wrap: wrap;
+    gap: 2px 4px;
+    padding-bottom: 4px;
+  }
+
+  .dtr .tab {
+    flex: 0 0 auto;
+    padding: 8px 11px;
+  }
+
+  .dtr .subnav {
+    top: calc(env(safe-area-inset-top, 0px) + 112px);
+  }
+
+  .dtr section.block {
+    scroll-margin-top: 168px;
+  }
+}
+
+@media (max-width: 760px) {
+  .dtr .session-tools {
+    margin-left: auto;
+  }
+
+  .dtr .save-status {
+    display: none;
+  }
+
+  .dtr .tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: thin;
+    padding-bottom: 6px;
+    scroll-padding-inline: 16px;
+  }
+
+  .dtr .tabs::-webkit-scrollbar {
+    display: block;
+    height: 4px;
+  }
+
+  .dtr .tabs::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 99px;
+  }
+
+  .dtr .tab:last-child {
+    margin-right: 8px;
+  }
+}
