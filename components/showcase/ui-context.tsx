@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
-import documentTree from "@/content/document.json";
+import documentTree from "@/content/document-tree";
 import { TABS, buildIdIndex } from "@/lib/document";
 import type { DocNode } from "@/lib/types";
 
