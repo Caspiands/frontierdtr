@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState } from "react";
-import documentTree from "@/content/document.json";
+import documentTree from "@/content/document-tree";
 import { Button } from "@/components/ui/button";
 import { useContent } from "@/components/showcase/content-context";
 import { Editable } from "@/components/showcase/editable";
