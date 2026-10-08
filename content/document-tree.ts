@@ -35,7 +35,26 @@ import part33 from "./document-parts/part-33.json";
 import part34 from "./document-parts/part-34.json";
 import part35 from "./document-parts/part-35.json";
 import part36 from "./document-parts/part-36.json";
+import part37 from "./document-parts/part-37.json";
+import part38 from "./document-parts/part-38.json";
+import part39 from "./document-parts/part-39.json";
+import part40 from "./document-parts/part-40.json";
+import part41 from "./document-parts/part-41.json";
+import part42 from "./document-parts/part-42.json";
+import part43 from "./document-parts/part-43.json";
+import part44 from "./document-parts/part-44.json";
+import part45 from "./document-parts/part-45.json";
+import part46 from "./document-parts/part-46.json";
+import part47 from "./document-parts/part-47.json";
+import part48 from "./document-parts/part-48.json";
+import part49 from "./document-parts/part-49.json";
+import part50 from "./document-parts/part-50.json";
+import part51 from "./document-parts/part-51.json";
+import part52 from "./document-parts/part-52.json";
+import part53 from "./document-parts/part-53.json";
+import part54 from "./document-parts/part-54.json";
+import part55 from "./document-parts/part-55.json";
 
-const documentTree = JSON.parse([part01, part02, part03, part04, part05, part06, part07, part08, part09, part10, part11, part12, part13, part14, part15, part16, part17, part18, part19, part20, part21, part22, part23, part24, part25, part26, part27, part28, part29, part30, part31, part32, part33, part34, part35, part36].join("")) as DocNode;
+const documentTree = JSON.parse([part01, part02, part03, part04, part05, part06, part07, part08, part09, part10, part11, part12, part13, part14, part15, part16, part17, part18, part19, part20, part21, part22, part23, part24, part25, part26, part27, part28, part29, part30, part31, part32, part33, part34, part35, part36, part37, part38, part39, part40, part41, part42, part43, part44, part45, part46, part47, part48, part49, part50, part51, part52, part53, part54, part55].join("")) as DocNode;
 
 export default documentTree;
