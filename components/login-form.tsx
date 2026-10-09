@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { DEMO_ACCOUNTS } from "@/lib/accounts";
+import { frontierLogoSrc } from "@/lib/frontier-logo";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -52,7 +53,7 @@ export function LoginForm() {
       <div className="relative mx-auto flex min-h-svh w-full max-w-6xl flex-col justify-center gap-10 px-4 py-10 lg:flex-row lg:items-center lg:px-8">
         <section className="max-w-xl motion-safe:animate-in motion-safe:fade-in motion-safe:duration-500">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/media/logo.webp" alt="Frontier Healthcare" className="h-14 w-auto rounded-xl bg-white px-4 py-2" />
+          <img src={frontierLogoSrc} alt="Frontier Healthcare" className="h-14 w-auto rounded-xl bg-white px-4 py-2" />
           <p className="mt-8 font-mono text-[11px] tracking-[0.16em] text-[#B9C6DA] uppercase">
             DTR v1 · Client edition · October 2026
           </p>
