@@ -9,6 +9,7 @@ import { GanttChart, GanttSelect } from "@/components/showcase/gantt-chart";
 import { useUi } from "@/components/showcase/ui-context";
 import { WeekList } from "@/components/showcase/week-list";
 import { TABS, cellAt, cellVal, collectText, hasClass, parseStyle } from "@/lib/document";
+import { frontierLogoSrc } from "@/lib/frontier-logo";
 import type { DocNode } from "@/lib/types";
 
 const root = documentTree as unknown as DocNode;
@@ -278,9 +279,18 @@ function NodeView({ node, path, index = 0 }: { node: DocNode; path: string; inde
   }
 
   if (node.t === "img") {
+    const rawSrc = node.a?.src ?? "";
+    const isLogo = rawSrc === "/media/logo.webp";
     return (
       // eslint-disable-next-line @next/next/no-img-element
-      <img src={node.a?.src} alt={node.a?.alt ?? ""} width={node.a?.width} height={node.a?.height} className={className} style={style} />
+      <img
+        src={isLogo ? frontierLogoSrc : rawSrc}
+        alt={node.a?.alt ?? ""}
+        width={isLogo ? undefined : node.a?.width}
+        height={isLogo ? undefined : node.a?.height}
+        className={className}
+        style={style}
+      />
     );
   }
 
